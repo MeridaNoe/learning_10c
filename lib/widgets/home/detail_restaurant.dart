@@ -7,8 +7,7 @@ import 'package:learning_10c/modules/home/entities/restaurants.dart';
 class DetailRestaurant extends StatelessWidget {
   final Restaurants restaurant;
 
-  const DetailRestaurant({Key? key, required this.restaurant})
-      : super(key: key);
+  const DetailRestaurant({super.key, required this.restaurant});
 
   @override
   Widget build(BuildContext context) {

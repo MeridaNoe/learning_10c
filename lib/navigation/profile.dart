@@ -1,9 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class Profile extends StatelessWidget {
+class Profile extends StatefulWidget {
   const Profile({super.key});
 
+  @override
+  _ProfileState createState() => _ProfileState();
+}
+
+class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,6 +49,9 @@ class Profile extends StatelessWidget {
               child: ElevatedButton(
                   onPressed: () async {
                     await FirebaseAuth.instance.signOut();
+                    if (mounted) {
+                      Navigator.pushNamed(context, '/');
+                    }
                   },
                   child: const Text('Cerrar sesion')))
         ]),
